@@ -531,6 +531,12 @@ class FrontControllerCore extends Controller
      */
     public function postProcess()
     {
+        Hook::exec(
+            'actionFrontControllerPostProcess',
+            [
+                'controller' => $this,
+            ]
+        );
     }
 
     protected function assignGeneralPurposeVariables()
